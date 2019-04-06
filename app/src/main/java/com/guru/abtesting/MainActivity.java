@@ -1,5 +1,6 @@
 package com.guru.abtesting;
 
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
@@ -21,18 +23,24 @@ public class MainActivity extends AppCompatActivity {
     FirebaseRemoteConfig mFirebaseRemoteConfig;
     ConstraintLayout constraintLayout;
     String TAG = "TESTID";
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         mainText = findViewById(R.id.main);
         constraintLayout = findViewById(R.id.root);
         constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 fetchWelcome();
+                Bundle bundle = new Bundle();
+                bundle.putString("DEVICE",Build.MODEL);
+                bundle.putString("COLOR", String.valueOf(constraintLayout.getBackground().getAlpha()));
+                mFirebaseAnalytics.logEvent("BACKGROUND_CLICK",bundle);
             }
         });
 
@@ -41,30 +49,22 @@ public class MainActivity extends AppCompatActivity {
                 .setDeveloperModeEnabled(BuildConfig.DEBUG)
                 .build();
         mFirebaseRemoteConfig.setConfigSettings(configSettings);
-        // [END enable_dev_mode]
 
-        // Set default Remote Config parameter values. An app uses the in-app default values, and
-        // when you need to adjust those defaults, you set an updated value for only the values you
-        // want to change in the Firebase console. See Best Practices in the README for more
-        // information.
-        // [START set_default_values]
         mFirebaseRemoteConfig.setDefaults(R.xml.remote_config_defaults);
-        // [END set_default_values]
 
         fetchWelcome();
+        Bundle b = new Bundle();
+        b.putString("DEVICE",Build.MODEL);
+        mFirebaseAnalytics.logEvent("onCreate",b);
     }
 
-    /**
-     * Fetch a welcome message from the Remote Config service, and then activate it.
-     */
+
     private void fetchWelcome() {
         mainText.setText(mFirebaseRemoteConfig.getString(TAG));
 
         long cacheExpiration = 3600; // 1 hour in seconds.
-        // If your app is using developer mode, cacheExpiration is set to 0, so each fetch will
-        // retrieve values from the service.
         if (mFirebaseRemoteConfig.getInfo().getConfigSettings().isDeveloperModeEnabled()) {
-            cacheExpiration = 0;
+            cacheExpiration =0;
         }
 
         // [START fetch_config_with_callback]
@@ -96,14 +96,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayWelcomeMessage() {
         // [START get_config_values]
-        String welcomeMessage = mFirebaseRemoteConfig.getString(TAG);
+        String remoteConVal = mFirebaseRemoteConfig.getString(TAG);
         // [END get_config_values]
-        mainText.setText(welcomeMessage);
-        if (welcomeMessage.equalsIgnoreCase("hello")) {
+        mainText.setText(remoteConVal);
+        if (remoteConVal.equalsIgnoreCase("hello")) {
             constraintLayout.setBackground(getDrawable(R.color.hello));
-        } else if (welcomeMessage.equalsIgnoreCase("hola")) {
+        } else if (remoteConVal.equalsIgnoreCase("hola")) {
             constraintLayout.setBackground(getDrawable(R.color.hola));
-        } else if (welcomeMessage.equalsIgnoreCase("hey"))
+        } else if (remoteConVal.equalsIgnoreCase("hey"))
             constraintLayout.setBackground(getDrawable(R.color.hey));
         else
             constraintLayout.setBackground(getDrawable(R.color.oops));
