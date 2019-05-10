@@ -1,38 +1,42 @@
 {
   "project_info": {
-    "project_number": "744575599616",
-    "firebase_url": "https://abtesting-4e064.firebaseio.com",
-    "project_id": "abtesting-4e064",
-    "storage_bucket": "abtesting-4e064.appspot.com"
+    "project_number": "236081387600",
+    "firebase_url": "https://simpleabtest.firebaseio.com",
+    "project_id": "simpleabtest",
+    "storage_bucket": "simpleabtest.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:744575599616:android:61aac71568471d1b",
+        "mobilesdk_app_id": "1:236081387600:android:61aac71568471d1b",
         "android_client_info": {
           "package_name": "com.guru.abtesting"
         }
       },
       "oauth_client": [
         {
-          "client_id": "744575599616-shvfqshk1e3pf037fftoj9g6520nd0ao.apps.googleusercontent.com",
+          "client_id": "236081387600-8ifhdik4i96u2f8n4l1pekefbq7tb0nt.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.guru.abtesting",
-            "certificate_hash": "2e584d9597234e1a66f5ac710a1f1f486d30e694"
+            "certificate_hash": "4d5a764c0df1544787e103cd7672e02cda419b2a"
           }
+        },
+        {
+          "client_id": "236081387600-nl65pgs3qkdevg4ka0ki0q6k7urqfp22.apps.googleusercontent.com",
+          "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDyvLmu4OgEozO2Tccn8ayC3RK5vfg_HSc"
+          "current_key": "AIzaSyB4Y8AQMGDAvGhenPhfxKwOgqsBfEqCXAQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "744575599616-rrapp52rpi0a4d3jongiajm7frqghufj.apps.googleusercontent.com",
+              "client_id": "236081387600-nl65pgs3qkdevg4ka0ki0q6k7urqfp22.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

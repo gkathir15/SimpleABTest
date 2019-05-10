@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_mywatchlist"
+        android:icon="@drawable/mywatchlist"
+        android:title="@string/mywatchlist" />
+
+    <item
+        android:id="@+id/navigation_nifty50"
+        android:icon="@drawable/nifty50"
+        android:title="@string/title_nifty50" />
+
+    <item
+        android:id="@+id/navigation_sensex30"
+        android:icon="@drawable/sensex30"
+        android:title="@string/title_sensex30" />
+
+</menu>

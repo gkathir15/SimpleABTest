@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/data_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_scrollFlags="scroll|enterAlways|snap">
+
+                <LinearLayout
+                    android:id="@+id/nifty_sensex_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f2f6fa"
+                    android:padding="5dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/nifty_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/nifty_sensex_text"
+                            style="@style/fontRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="NIFTY"
+                            android:textColor="#585757"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/nifty_ltp"
+                            style="@style/fontRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@id/nifty_sensex_text"
+                            android:text="11,359.45"
+                            android:textColor="@color/watchlist_title_text"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/nifty_change_val"
+                            style="@style/fontRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/nifty_ltp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@id/nifty_sensex_text"
+                            android:text="-138.45 (-1.20%)"
+                            android:textColor="#0d4da1"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/arrow_nifty"
+                            style="@style/fontIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@id/nifty_ltp"
+                            android:text="X"
+                            android:textColor="#0079c2"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="#E6E6E6" />
+
+                    <RelativeLayout
+                        android:id="@+id/sensex_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/sensex_text"
+                            style="@style/fontRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SenSex"
+                            android:textColor="#585757"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/sensex_ltp"
+                            style="@style/fontRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@id/sensex_text"
+                            android:text="37,789.13"
+                            android:textColor="@color/watchlist_title_text"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/sensex_change_val"
+                            style="@style/fontRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/sensex_ltp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@id/sensex_text"
+                            android:text="-487.50 (-1.27%)"
+                            android:textColor="#F10434"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/arrow_sensex"
+                            style="@style/fontIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@id/sensex_ltp"
+                            android:text="W"
+                            android:textColor="#F10434"
+                            android:textSize="10sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/search_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="3dp">
+
+
+                    <LinearLayout
+                        android:id="@+id/watchlist_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/managewatchlist_border"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingLeft="4dp">
+
+                        <TextView
+                            android:id="@+id/watchlist_icon"
+                            style="@style/fontIconSet16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="A"
+                            android:textColor="#4b82ff"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:gravity="center_vertical"
+                            android:padding="3dp"
+                            android:text="Manage Watchlist"
+                            android:textColor="#4b82ff"
+                            android:textSize="10sp" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/search_lay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="2dp"
+                        android:background="#000000"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/floating_search"
+                            style="@style/fontIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toLeftOf="@+id/watchlist_edit"
+                            android:gravity="center"
+                            android:padding="3dp"
+                            android:text="o"
+                            android:textColor="@color/white"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:id="@+id/watchlist_edit"
+                            style="@style/fontRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:paddingTop="3dp"
+                            android:paddingRight="5dp"
+                            android:paddingBottom="3dp"
+                            android:text="Search"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/mywatchlist_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_gravity="left"
+                    android:background="#1b2d3b"
+                    android:gravity="center|left"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/security_holding_header_first"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/symbol_linear"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/fontRegular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="0.5dp"
+                                android:text="Symbol"
+                                android:textColor="@color/white"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/symbol_arrow"
+                                style="@style/fontIcon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="3dp"
+                                android:layout_marginTop="0.5dp"
+                                android:gravity="center"
+                                android:text="V"
+                                android:textColor="#70777e"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/details_textView"
+                            style="@style/fontRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Symbol"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/bidAskLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:id="@+id/bid_linear"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/bid_title"
+                                style="@style/fontRegular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Bid (Size)"
+                                android:textColor="@color/white"
+                                android:textSize="10sp" />
+
+                            <TextView
+                                android:id="@+id/bid_arrow"
+                                style="@style/fontIcon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="0.5dp"
+                                android:gravity="center"
+                                android:text="V"
+                                android:textColor="#70777e"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/bid_ask"
+                            style="@style/fontRegular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Ask (Size)"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/mywatchlist_ltp_sorting_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="3dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/ltp_linear"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/valuvat"
+                                style="@style/fontRegular"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="LTP"
+                                android:textColor="@color/white"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/ltp_arrow"
+                                style="@style/fontIcon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:layout_marginTop="1dp"
+                                android:layout_toRightOf="@+id/valuvat"
+                                android:gravity="top"
+                                android:text="V"
+                                android:textColor="#70777e"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/chgLabel"
+                            style="@style/fontRegular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/ltp_linear"
+                            android:layout_marginTop="0.5dp"
+                            android:gravity="right"
+                            android:paddingRight="6dp"
+                            android:text="Change (%)"
+                            android:textColor="@color/white"
+                            android:textSize="8sp" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.design.widget.AppBarLayout>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

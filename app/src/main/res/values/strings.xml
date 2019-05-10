@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AB Testing</string>
+    <string name="mywatchlist">WATCHLIST</string>
+    <string name="title_nifty50">Nifty50</string>
+    <string name="title_sensex30">Sensex30</string>
+    <string name="AE_NSE_TEXT_CAPS">NSE</string>
 </resources>

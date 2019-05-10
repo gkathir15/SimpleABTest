@@ -1,11 +1,24 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="fontRegular">
+        <item name="android:fontFamily">fonts/Lato-Regular.ttf</item>
+    </style>
+
+    <style name="fontIcon">
+        <item name="android:fontFamily">fonts/Angel.ttf</item>
+    </style>
+
+    <style name="fontIconSet16">
+        <item name="android:fontFamily">fonts/Angel_eye_font_icon_set_16.ttf</item>
+    </style>
+
 
 </resources>

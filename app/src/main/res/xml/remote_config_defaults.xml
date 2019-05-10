@@ -13,5 +13,44 @@
         <key>welcome_message</key>
         <value>Welcome to my awesome app!</value>
     </entry>
+
+    <!--==========================================-->
+    <!--Firebase Credentials-->
+    <!--Email : msf.ab.testing@gmail.com-->
+    <!--Password : abtesting123-->
+    <!--Default Values-->
+    <!--==========================================-->
+
+    <entry>
+        <key>color_primary</key>
+        <value>#02569a</value>
+    </entry>
+
+    <entry>
+        <key>tab1_name</key>
+        <value>WATCHLIST</value>
+    </entry>
+
+    <entry>
+        <key>tab2_name</key>
+        <value>NIFTY50</value>
+    </entry>
+
+    <entry>
+        <key>tab3_name</key>
+        <value>SENSEX30</value>
+    </entry>
+
+    <entry>
+        <key>recycler_layout</key>
+        <value>false</value>
+    </entry>
+
+    <entry>
+        <key>fab_visibility</key>
+        <value>false</value>
+    </entry>
+
+
 </defaultsMap>
     <!-- END xml_defaults -->
